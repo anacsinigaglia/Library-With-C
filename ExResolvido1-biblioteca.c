@@ -1,9 +1,8 @@
-/*O problema consiste em elaborar um cadastro para 20 livros, contendo as seguintes
-informações: código, título, autor, área, ano e editora. Desenvolver um menu com as seguintes
-opções:
+/*O problema consiste em elaborar um cadastro para 20 livros, contendo as seguintes informaÃ§Ãµes: cÃ³digo, tÃ­tulo, autor, Ã¡rea, ano 
+e editora. Desenvolver um menu com as seguintes opÃ§Ãµes:
 1. Cadastrar os livros.
-2. Imprimir as informações dos livros.
-3. Pesquisar livros por código.
+2. Imprimir as informaÃ§Ãµes dos livros.
+3. Pesquisar livros por cÃ³digo.
 4. Ordenar os livros por ano.
 5. Sair do programa.*/
 
@@ -27,14 +26,14 @@ int main(){
     opcoes = 0;
 
     while(opcoes != 5) {
-        printf("1-Cadastrar os livros.\n2-Imprimir os livros cadastrados.\n3-Pesquisar livros por código.\n4-Ordenar os livros por ano.\n5-Sair.\n\nDigite a opção desejada: ");
+        printf("1-Cadastrar os livros.\n2-Imprimir os livros cadastrados.\n3-Pesquisar livros por cÃ³digo.\n4-Ordenar os livros por ano.\n5-Sair.\n\nDigite a opÃ§Ã£o desejada: ");
         scanf("%d", &opcoes);
         fflush(stdin);
 
         if (opcoes == 1) {
             system("cls");
             for (i=0; i<TAM; i++) {
-                printf("Digite o código do livro da posição %d: ", i+1);
+                printf("Digite o cÃ³digo do livro da posiÃ§Ã£o %d: ", i+1);
                 scanf("%d", &ficha[i].codigo);
                 fflush(stdin);
                 
