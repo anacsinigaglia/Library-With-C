@@ -19,7 +19,7 @@ struct livro {
 };
 
 int main(){
-	setlocale(LC_ALL, "Portuguese");
+    setlocale(LC_ALL, "Portuguese");
     struct livro ficha[TAM]; /*aqui estamos instanciando livro com o nome "ficha", em forma de vetor e por isso com tamanho da constante TAM*/
     struct livro troca;
     int busca, i, j, acha, opcoes;
@@ -62,7 +62,7 @@ int main(){
         
         else {
         	
-        	if (opcoes == 3) {
+                if (opcoes == 3) {
         		system("cls");
         		printf("Digite o código que deseja buscar: ");
         		scanf("%d", &busca);
