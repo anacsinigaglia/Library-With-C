@@ -19,7 +19,7 @@ struct livro {
 };
 
 int main(){
-    setlocale(LC_ALL, "Portuguese");
+	setlocale(LC_ALL, "Portuguese");
     struct livro ficha[TAM]; /*aqui estamos instanciando livro com o nome "ficha", em forma de vetor e por isso com tamanho da constante TAM*/
     struct livro troca;
     int busca, i, j, acha, opcoes;
@@ -31,9 +31,10 @@ int main(){
         scanf("%d", &opcoes);
         fflush(stdin);
 
+//Cadastro de livros:
         if (opcoes == 1) {
             system("cls");
-            for (i=0; i<TAM; i++) {
+            for (i = 0; i < TAM; i ++) {
                 printf("Digite o código do livro da posição %d: ", i+1);
                 scanf("%d", &ficha[i].codigo);
                 fflush(stdin);
@@ -51,7 +52,7 @@ int main(){
                 fflush(stdin);
                 
                 printf("Digite o ano: ");
-                scanf("%d", &ficha[i].ano]);
+                scanf("%d", &ficha[i].ano);
                 fflush(stdin);
                 
                 printf("Digite o nome da editora: ");
@@ -59,29 +60,68 @@ int main(){
                 fflush(stdin);
             }
         }
-        
-        else {
-        	
-                if (opcoes == 3) {
-        		system("cls");
-        		printf("Digite o código que deseja buscar: ");
-        		scanf("%d", &busca);
-        		i = 0;
-        		acha = 0;
-        		while ((i < TAM) && <acha == 0) {
-        			if (ficha[i].codigo == busca) {
-        				acha = 1;
-					} else {
-						i++;
-					}
+
+//Impressão de livros cadastrados
+		else { 
+			if (opcoes == 2) {
+				system("cls");
+				for(i = 0; i < TAM; i++) {
+					printf("\nCÓDIGO: %d\n", ficha[i].codigo);
+					printf("TÍTULO: %d\n", ficha[i].titulo);
+					printf("AUTOR: %d\n", ficha[i].autor);
+					printf("ÁREA: %d\n", ficha[i].area);
+					printf("ANO: %d\n", ficha[i].ano);
+					printf("EDITORA: %d\n", ficha[i].editora);
+				}
+			}
+			
+//Pesquisa de livros por código
+			else {
+				if (opcoes == 3) {
+					system("cls");
+					printf("Digite o código que deseja buscar: ");
+					scanf("%d", &busca);
+					i = 0;
+					acha = 0;
 					
-					if (acha == 1) {
-						printf("\nCÓDIGO: %d\n", ficha[i].codigo);
-						printf("\nTÍTULO: %s\n", ficha[i].titulo);
+					while(i < TAM && acha == 0) {
+						if(ficha[i].codigo == busca) {
+							acha = 1;
+						} else {
+							i++;
+						}
+						if(acha == 1) {
+							printf("\nCÓDIGO: %d\n", ficha[i].codigo);
+							printf("TÍTULO: %d\n", ficha[i].titulo);
+							printf("AUTOR: %d\n", ficha[i].autor);
+							printf("ÁREA: %d\n", ficha[i].area);
+							printf("ANO: %d\n", ficha[i].ano);
+							printf("EDITORA: %d\n", ficha[i].editora);
+						} else {
+							printf("\nRegistro não encontrado.");
+						}
 						
+			if (opcoes == 4) {
+						system("cls");
+						for(i = 0; i < TAM; i++) {
+							for(j = 0; j < TAM; j++) {
+								if(ficha[i].ano > ficha[j].ano) {
+									troca = ficha[i];
+									ficha[i] = ficha[j];
+									ficha[j] = troca;
+								}
+							}
+						}
+						for (i = 0; i < TAM; i++) {
+							printf("\nCÓDIGO: %d, TÍTULO: %s, ANO: %d\n\n", ficha[i].codigo, ficha[i].titulo, ficha[i].ano);
+						}
+						}
 					}
 				}
 			}
+				
 		}
-    }
+			
+			return(0);
+	}
 }
