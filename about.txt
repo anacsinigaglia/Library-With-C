@@ -1,0 +1,5 @@
+Using struct from the C language, we have here a library with a maximum of 20 books, containing the following information: id, title, author, area, year and publishing company. 
+We can register new books (if we haven't reached the limit of 20 yet), print its informations, search for books by its id, order them by year and leave the app.
+
+Estudo com struct em linguagem C. Cadastro para 20 livros, contendo as seguintes informações: código, título, autor, área, ano e editora. Menu com as seguintes opções: 
+Cadastrar os livros; imprimir as informações dos livros; pesquisar livros por código; ordenar os livros por ano; sair do programa.
